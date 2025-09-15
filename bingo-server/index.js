@@ -18,7 +18,7 @@ const server = http.createServer(app);
 // });
 const io = new Server(server, {
   cors: {
-    origin: ["https://bingo-game-frontend.onrender.com","https://bingo.ronaksiddhpura.tech"]
+    origin: ["https://bingo-game-frontend.onrender.com","https://bingo.ronaksiddhpura.tech"],
     methods: ["GET", "POST"]
   },
   transports: ["websocket","polling"]
@@ -179,6 +179,7 @@ server.listen(PORT,'0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 
 });
+
 
 
 
