@@ -1,0 +1,11 @@
+Bingo-server
+
+1.Run the command before run the Bingo-server "npm install nodemon express socket.io cors"
+2.after run the "nodemon index.js"
+
+Bingo
+1.first run "npm i"
+2.Run the command  "npm install lucide-react socket.io-client"
+3.Run the command "npm install tailwindcss @tailwindcss/vite"
+
+
