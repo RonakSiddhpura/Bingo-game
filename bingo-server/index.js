@@ -9,13 +9,21 @@ const app = express();
 app.use(cors());
 
 const server = http.createServer(app);
+// const io = new Server(server, {
+//   cors: {
+//     // origin: ["http://localhost:3000", "http://localhost:5173","http://10.239.39.209:5173","http://192.168.52.109:5173"],
+//     origin: process.env.FRONTEND_URL || "*",
+//     methods: ["GET", "POST"]
+//   }
+// });
 const io = new Server(server, {
   cors: {
-    // origin: ["http://localhost:3000", "http://localhost:5173","http://10.239.39.209:5173","http://192.168.52.109:5173"],
-    origin: process.env.FRONTEND_URL || "*",
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"]
-  }
+  },
+  transports: ["polling"]
 });
+
 
 // Store active rooms and their players
 const rooms = {};
@@ -169,4 +177,5 @@ io.on('connection', (socket) => {
 const PORT = process.env.PORT || 3001;
 server.listen(PORT,'0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
+
 });
