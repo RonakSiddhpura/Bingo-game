@@ -21,7 +21,7 @@ const io = new Server(server, {
     origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"]
   },
-  transports: ["polling"]
+  transports: ["websocket","polling"]
 });
 
 
@@ -179,3 +179,4 @@ server.listen(PORT,'0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 
 });
+
